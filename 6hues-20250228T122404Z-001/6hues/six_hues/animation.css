@@ -15,7 +15,7 @@ body {
     background-image: radial-gradient(circle farthest-corner at 10% 20%, #3B2F2F  0.1%,     #4A3B3B 94.2%);
     background-size: 100%;
     font-family: 'Montserrat', sans-serif;
-    overflow: hidden;
+    
 }
 
 /* 🔵 LOADING ANIMATION */
@@ -27,6 +27,8 @@ body {
     position: absolute;
     margin: 0 32px;
     transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
 }
 
 .loading-text {
@@ -130,4 +132,153 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
+    transition: background-image 0.8s ease-in-out, opacity 0.5s;
 }
+
+.enlarged-image {
+    position: fixed;
+    z-index: 9999;
+    object-fit: cover;
+    transition: all 0.8s ease-in-out;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+
+.social-icons {
+    position: fixed; /* Fix position on screen */
+    left: 20px; /* Adjust left spacing */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column; /* Arrange icons vertically */
+    align-items: center; /* Align to center */
+    gap: 15px; /* Space between icons */
+}
+
+.social-icons::before,
+.social-icons::after {
+    content: "";
+    width: 2px; /* Line thickness */
+    height: 110px; /* Line length */
+    background-color: #d3cece; /* Match icon color */
+    display: block;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff1f;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 20px;
+    color: #d3cece;
+    transition: 0.3s ease-in-out; /* Fixed transition syntax */
+    display: none; /* Hide it initially */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.icon:hover {
+    background-color: rgb(104, 61, 25); /* Change color on hover */
+    color: white;
+}
+
+@keyframes blueprintEffect {
+    0% {
+        opacity: 0;
+        clip-path: inset(100% 0 0 0);
+    }
+    50% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hero-quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 4rem; /* Larger font size for impact */
+    font-weight: 700; /* Bold font weight */
+    text-transform: uppercase; /* Uppercase text for elegance */
+    color: white; /* White text for contrast */
+    max-width: 80%;
+    line-height: 1.2; /* Tighter line height */
+    opacity: 0;
+    display: none; /* Hide initially */
+    transition: opacity 1s ease-in-out;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    font-family: 'Montserrat', sans-serif; /* Use the imported font */
+    letter-spacing: 2px; /* Slight letter spacing for elegance */
+    background: linear-gradient(45deg, #e0d4bc, #ffffff); /* Gradient text effect */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Make text transparent to show gradient */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); /* Subtle stroke for definition */
+}
+.quote{
+    border: 1px solid white;
+    border-radius: 13px;
+}
+.image-list {
+    position: fixed;
+    bottom: 20px;
+    left: 77%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: calc(153px * 3 + 100px * 2); /* Width for 3 images + 2 gaps */
+    overflow: hidden; /* Hide the fourth image completely */
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    white-space: nowrap; /* Prevents wrapping */
+    display: none; /* Hide it initially */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-bottom: 0.5px solid white;
+    
+}
+
+
+/* Thumbnail image styling */
+.thumbnail {
+    width: 153px;
+    height: 87px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+    border: 1px solid white;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .image-list {
+        flex-direction: column;
+        align-items: center;
+        bottom: 10px;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 60px;
+    }
+}
+
