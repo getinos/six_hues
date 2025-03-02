@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     setTimeout(() => imageList.style.opacity = "1", 100);
                 }
             }, 500);
+            
         }
     }, 5000);
 });
