@@ -34,3 +34,33 @@ const setDiameter = () => {
 
 setDiameter();
 window.addEventListener('resize', setDiameter);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const discoverBtn = document.querySelector(".below-section p");
+    const belowPart = document.querySelector(".below-part");
+    const backBtn = document.querySelector(".back");
+
+    discoverBtn.addEventListener("click", function () {
+        belowPart.classList.add("active");
+    });
+
+    backBtn.addEventListener("click", function () {
+        belowPart.classList.remove("active");
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const imageContainers = document.querySelectorAll(".image-container");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show"); // Apply animation
+            } else {
+                entry.target.classList.remove("show"); // Reset if scrolling up
+            }
+        });
+    }, { threshold: 0.3 }); // Triggers when 30% of the element is visible
+
+    imageContainers.forEach((container) => observer.observe(container));
+});
