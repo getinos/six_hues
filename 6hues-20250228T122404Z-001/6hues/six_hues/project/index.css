@@ -183,15 +183,15 @@ header{
 .slider .list .items .image {
     transform: rotate(-60deg);
     filter: blur(30px);
-    transition:  1s;
+    transition:  2s;
 } 
 .slider .list .items .image::before{
     transform: translate(-50%,-50%) rotate(-120deg);
-    transition: transform 1s;
+    transition: transform 2s;
 } 
 .slider .list .items .image::after{
     transform: translate(-50%,-50%) rotate(-170deg);
-    transition: transform 1s;
+    transition: transform 2s;
 }
 .slider .list .items{
     pointer-events: none;
