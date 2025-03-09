@@ -76,6 +76,7 @@ header{
     align-items: center;
 }
 
+
 .slider .list .items .content{
     position: absolute;
     /* top: 20%; */
@@ -147,6 +148,7 @@ header{
     background-size: var(--diameter) var(--diameter) ;
     border-radius: 50%;
     position: relative;
+    object-fit: cover;
 
 }
 
@@ -165,6 +167,7 @@ header{
     transform: translate(-50%, -50%);
     background-position: center;
     background-size: var(--diameter) var(--diameter);
+    object-fit: cover;
 
 }
 .slider .list .items .image::after{
@@ -344,6 +347,9 @@ span {
     opacity: 1; /* Initially hidden */
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;    
 }
+.image-container img{
+    object-fit: cover;
+}
 
 .large-image{
     height: 500px;
@@ -406,6 +412,7 @@ span {
     .info-section img {
         width: 100%;
         max-width: 350px;
+        object-fit: cover;
     }
     .text {
         max-width: 100%;
