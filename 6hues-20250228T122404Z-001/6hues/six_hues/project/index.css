@@ -167,7 +167,6 @@ header{
     transform: translate(-50%, -50%);
     background-position: center;
     background-size: var(--diameter) var(--diameter);
-    object-fit: cover;
 
 }
 .slider .list .items .image::after{
