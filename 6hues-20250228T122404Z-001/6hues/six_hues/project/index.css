@@ -133,11 +133,7 @@ header{
 }
 
 
-.slider .list .items .content p:last-child{
-    display: flex;
-    align-items: end;
-    padding-bottom: 25px;
-}
+
 
 .slider .list .image{
     flex-shrink: 0;
@@ -155,8 +151,8 @@ header{
 .slider .list .items .image::before,
 .slider .list .items .image::after{
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 70%;
+    height: 70%;
     content: '';
     border-radius: 50%;
     background-image: 
@@ -170,8 +166,8 @@ header{
 
 }
 .slider .list .items .image::after{
-    width: 19%;
-    height: 19%;
+    width: 30%;
+    height: 30%;
     background-image: var(--url);
     
 }
@@ -180,7 +176,7 @@ header{
 
 .slider .list .content h2{
     transform: translateY(-100%);
-    transition: transform 1s;
+    transition: transform 0.5s;
 }
 .slider .list .items .image {
     transform: rotate(-60deg);
@@ -189,11 +185,11 @@ header{
 } 
 .slider .list .items .image::before{
     transform: translate(-50%,-50%) rotate(-120deg);
-    transition: transform 2s;
+    transition: transform 2.5s;
 } 
 .slider .list .items .image::after{
     transform: translate(-50%,-50%) rotate(-170deg);
-    transition: transform 2s;
+    transition: transform 2.8s;
 }
 .slider .list .items{
     pointer-events: none;
@@ -303,6 +299,7 @@ header{
     position: fixed; /* Keeps it fixed on the screen */
     cursor: pointer;
     z-index: 1000; 
+    position: fixed;
 }
 
 
@@ -350,22 +347,24 @@ span {
     object-fit: cover;
 }
 
-.large-image{
+.large-image, .mirrored .large-image {
     height: 500px;
     width: 350px;
     transform: translateY(80px); /* Start lower */
     transition: transform 0.8s ease-out; /* Smooth movement */
 }
+
 .small-image {
     width: 222px;
     height: 255px;
     position: absolute;
     bottom: -53px;
-    right: -128px;
+    right: -128px; /* Adjust this if needed */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-80px); /* Start higher */
     transition: transform 0.8s ease-out;
 }
+
 .image-container.show {
     opacity: 1; /* Fully visible */
 }
@@ -401,7 +400,14 @@ span {
 }
 
 @media (max-width: 766px) {
-    .info-section {
+    .info-section{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .info-section.mirrored {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -420,23 +426,28 @@ span {
         /* border-right: 1px solid black; */
        
     }
+    .mirrored.text{
+        max-width: 100%;
+        text-align: center;
+        margin-top: 50px;
+    }
     .image-container {
         position: relative;
-        width: 300px; /* Matches the large image */
-        max-width: 100%;
-        overflow: hidden; /* Prevents the small image from expanding the screen */
+        width: 100%;
+        /* max-width: 100%; */
+        height: 45vh;
+        overflow: hidden;
     }
     
-    .small-image {
-        width: 40%; /* Scales dynamically */
-        max-width: 150px; /* Ensures it doesn't break layout */
+    .large-image, .mirrored .large-image {
+        width: 100%;
         height: auto;
-        position: absolute;
-        bottom: -20px; /* Adjust positioning */
-        right: -10px; /* Keep it closer */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    
+
+    /* Hide small images */
+    .small-image, .mirrored .small-image {
+        display: none;
+    }
 }
 
 .mirrored{
@@ -445,6 +456,7 @@ span {
     align-items: flex-start;
     gap: 30px;
     margin-top: 126px;
+    margin-bottom: 50px;
 }
 .mirrored .image-container {
     position: relative;
@@ -453,20 +465,18 @@ span {
     margin-top: 49px;
     
 }
-
-.mirrored .large-image{
-    height: 500px;
-    width: 350px;
-}
 .mirrored .small-image {
     width: 222px;
     height: 255px;
-    position: relative;
+    position: absolute;
     bottom: -53px;
-    right: 228px;
+    right: 228px; /* Adjust this if needed */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
+    transform: translateY(-80px); /* Start higher */
+    transition: transform 0.8s ease-out;
 }
+
+
 .mirrored .text {
     max-width: 400px;
     text-align: left;
@@ -495,4 +505,67 @@ span {
 }
 
 
+footer {
+    background-color: #222;
+    color: white;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f04c4c; /* 6Hues Theme Color */
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #f04c4c;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.icon:hover {
+    background-color: white;
+    color: #f04c4c;
+    transition: 0.3s;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    font-size: 14px;
+}
 
