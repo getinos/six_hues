@@ -242,7 +242,7 @@ header{
     width: var(--width-df);
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 .arrows button{
     all: unset;
