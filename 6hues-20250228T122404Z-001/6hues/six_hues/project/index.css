@@ -578,7 +578,7 @@ footer {
     width: 250px;
     height: 40%;
     background: #0000004b;
-    color: rgb(34, 32, 32);
+    color: rgb(255, 255, 255);
     padding: 20px;
     transition: left 0.3s ease-in-out;
 }
@@ -593,7 +593,7 @@ footer {
 }
 
 .sidebar ul li a {
-    color: rgb(116, 85, 32);
+    color: rgb(166, 166, 166);
     text-decoration: none;
 }
 
