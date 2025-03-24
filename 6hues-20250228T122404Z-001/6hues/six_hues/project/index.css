@@ -10,7 +10,6 @@ body{
     min-height: 100vh;
     position: relative;
     z-index: -1;
-    background: url('./img/1.webp') no-repeat center center/cover;
     scrollbar-width: none; /* Hides scrollbar in Firefox */
     -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
 }
@@ -279,8 +278,7 @@ header{
     left: 0;
     width: 100%;
     height: 100vh;
-    background: url('./img/3.webp') no-repeat center center/cover;
-
+    background: whitesmoke;
     overflow-y: scroll; /* Keep scrolling enabled */
     transition: transform 2s ease-in-out;
 }
@@ -642,8 +640,10 @@ footer {
     justify-content: center;
     padding: 60px 20px;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); 
-    mask-size: 110%;
-    mask-position: 5% 5%;
+  /*  -webkit-mask-image: url('./img/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MTkxNjAxMS13aWtpbWVkaWEtaW1hZ2Utam9iNzY5LnBuZw.png');
+    mask-image: url('./img/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MTkxNjAxMS13aWtpbWVkaWEtaW1hZ2Utam9iNzY5LnBuZw.png');*/
+    mask-size: cover;
+    mask-position: center;
 }
 
 .about-us .content {
