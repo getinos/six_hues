@@ -12,6 +12,7 @@ body{
     color: #333;
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
     z-index: -1;
     scrollbar-width: none; /* Hides scrollbar in Firefox */
     -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
@@ -235,16 +236,17 @@ header{
 }
 .below-section{
     cursor: pointer;
-    --d:14px; /* control the depth */
-    
-    padding:8px 8px calc(8px + var(--d)) 8px;
-    background:linear-gradient(rgba(255,255,255,0.4) 0 0) bottom/100% var(--d) no-repeat;
-    clip-path:polygon(0 0,100% 0,100% calc(100% - var(--d)),calc(100% - 3px) calc(100% - var(--d)),3px calc(100% - var(--d)) ,0 calc(100% - var(--d))); 
-    transform:perspective(1000px) rotateX(0deg);
-    transition:0.4s,color 0.4s 0.4s,background-color 0.4s 0.4s;
+    --d: 14px;
+    border-radius: 31%;
+    box-shadow: 0px -1px 4px rgb(255, 255, 255);
+    padding: 8px 8px calc(8px + var(--d)) 8px;
+    background: linear-gradient(rgba(255, 255, 255, 0.4) 0 0) bottom / 100% var(--d) no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--d)), calc(100% - 3px) calc(100% - var(--d)), 3px calc(100% - var(--d)), 0 calc(100% - var(--d)));
+    transform: perspective(1000px) rotateX(0deg);
+    transition: 0.4s, color 0.4s 0.4s, background-color 0.4s 0.4s;
 }
 .below-section:hover{
-    background-color:#a19d9d;
+    background-color:#a19d9d44;
     color:#fff;
     clip-path:polygon(0 0,100% 0,100% calc(100% - var(--d)),calc(100% - 3px) 100%,3px 100% ,0 calc(100% - var(--d)));
     transform:perspective(1000px) rotateX(40deg);
