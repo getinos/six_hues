@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     font-size: 15px;
@@ -690,4 +694,24 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+#prev,#next{
+    border-radius: 31%;
+    box-shadow: inherit 10;
+    box-shadow: 0 4px 8px rgb(216 216 216 / 95%);
+}
+#next:hover{
+    background-color:#a19d9d44;
+    color:#fff;
+    clip-path:polygon(0 0,100% 0,100% calc(100% - var(--d)),calc(100% - 3px) 100%,3px 100% ,0 calc(100% - var(--d)));
+    transform:perspective(1000px) rotateX(40deg);
+    transition:0.2s,clip-path 0.2s 0.2s,transform 0.2s 0.2s;
+}
+#prev:hover{
+    background-color:#a19d9d44;
+    color:#fff;
+    clip-path:polygon(0 0,100% 0,100% calc(100% - var(--d)),calc(100% - 3px) 100%,3px 100% ,0 calc(100% - var(--d)));
+    transform:perspective(1000px) rotateX(40deg);
+    transition:0.2s,clip-path 0.2s 0.2s,transform 0.2s 0.2s;
 }
