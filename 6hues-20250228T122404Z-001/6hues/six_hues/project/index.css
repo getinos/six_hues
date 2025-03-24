@@ -232,8 +232,21 @@ header{
 }
 .below-section{
     cursor: pointer;
+    --d:14px; /* control the depth */
+    
+    padding:8px 8px calc(8px + var(--d)) 8px;
+    background:linear-gradient(rgba(255,255,255,0.4) 0 0) bottom/100% var(--d) no-repeat;
+    clip-path:polygon(0 0,100% 0,100% calc(100% - var(--d)),calc(100% - 3px) calc(100% - var(--d)),3px calc(100% - var(--d)) ,0 calc(100% - var(--d))); 
+    transform:perspective(1000px) rotateX(0deg);
+    transition:0.4s,color 0.4s 0.4s,background-color 0.4s 0.4s;
 }
-
+.below-section:hover{
+    background-color:#a19d9d;
+    color:#fff;
+    clip-path:polygon(0 0,100% 0,100% calc(100% - var(--d)),calc(100% - 3px) 100%,3px 100% ,0 calc(100% - var(--d)));
+    transform:perspective(1000px) rotateX(40deg);
+    transition:0.2s,clip-path 0.2s 0.2s,transform 0.2s 0.2s;
+}
 .arrows{
     position: absolute;
     left: 50%;
@@ -608,4 +621,68 @@ footer {
 
 .sidebar.active {
     left: 0;
+}
+
+
+  /* About Us Section */
+.about-us {
+    position: relative;
+    height: 100vh;  /* Full viewport height */
+    background: url('./img/1.webp') no-repeat center center/cover;
+    background-attachment: fixed;  /* Keeps the image still */
+    color: #fff;   /* White text for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); 
+    -webkit-mask-image: url('./img/white-brush-stroke-paint-brushes-ink-brush-black-blackandwhite-text-water-line-png-clipart.png');
+    mask-image: url('./img/white-brush-stroke-paint-brushes-ink-brush-black-blackandwhite-text-water-line-png-clipart.png');
+    mask-size: cover;
+    mask-position: center;
+}
+
+.about-us .content {
+    max-width: 800px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;  /* Smooth entry animation */
+}
+
+.about-us h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.about-us p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-us .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #d62828;  /* 6Hues red color */
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.about-us .btn:hover {
+    background-color: #9d2020;  /* Darker red on hover */
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
