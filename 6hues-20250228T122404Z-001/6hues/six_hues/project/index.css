@@ -53,6 +53,7 @@ header{
     align-items: center;
     position: relative;
     z-index: 1;
+    box-shadow: inset 0 0 0 1000px rgba(142, 140, 140, 0.118); 
 }
 
 
@@ -277,7 +278,7 @@ header{
     left: 0;
     width: 100%;
     height: 100vh;
-    background: whitesmoke;
+    background: #fffaf6;
     overflow-y: scroll; /* Keep scrolling enabled */
     transition: transform 2s ease-in-out;
 }
@@ -632,7 +633,7 @@ footer {
     position: relative;
     height: 100vh;  /* Full viewport height */
     background: url('./img/1.webp') no-repeat center center/cover;
-    background-attachment: fixed;  /* Keeps the image still */
+    background-attachment: fixed; 
     color: #fff;   /* White text for contrast */
     display: flex;
     align-items: center;
