@@ -183,7 +183,12 @@ header{
     
 }
 
-
+.third{
+    margin-bottom: 40px;
+}
+.third .text{
+    margin-top: 20px;
+}
 
 .slider .list .content h2{
     transform: translateY(-100%);
